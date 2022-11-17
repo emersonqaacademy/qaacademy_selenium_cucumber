@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CadastroPage;
 import pages.LoginPage;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class LoginStep {
@@ -41,13 +43,30 @@ public class LoginStep {
         driver.get(url);
     }
 
-    @E("possua um cadastro")
+/*    @E("possua um cadastro")
     public void possuoCadastro(){
         cadastroPage.clicarBotaoRegistrar();
         cadastroPage.preencherEmail("teste@teste.com");
         cadastroPage.preencherNome("Emerson");
         cadastroPage.preencherSenha("123456");
         cadastroPage.preencherConfirmacaoSenha("123456");
+        cadastroPage.selecionaSaldo();
+        cadastroPage.clicaBotaoCadastrar();
+        cadastroPage.clicaBotaoFecharContaCriada();
+    }*/
+
+    @E("possua um cadastro com os dados")
+    public void possuoCadastroDataTable(List<Map<String, String>> dataTable){
+        String email = dataTable.get(0).get("Email");
+        String nome = dataTable.get(0).get("Nome");
+        String senha = dataTable.get(0).get("Senha");
+        String confirmacao = dataTable.get(0).get("Confirmacao");
+
+        cadastroPage.clicarBotaoRegistrar();
+        cadastroPage.preencherEmail(email);
+        cadastroPage.preencherNome(nome);
+        cadastroPage.preencherSenha(senha);
+        cadastroPage.preencherConfirmacaoSenha(confirmacao);
         cadastroPage.selecionaSaldo();
         cadastroPage.clicaBotaoCadastrar();
         cadastroPage.clicaBotaoFecharContaCriada();
