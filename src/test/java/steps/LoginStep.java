@@ -9,6 +9,7 @@ import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CadastroPage;
@@ -20,12 +21,15 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginStep {
     WebDriver driver;
+    ChromeOptions options;
     LoginPage loginPage;
     CadastroPage cadastroPage;
 
     @Before
     public void before(){
-        driver = new ChromeDriver();
+        options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
