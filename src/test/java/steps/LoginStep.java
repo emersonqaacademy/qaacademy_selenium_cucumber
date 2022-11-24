@@ -28,10 +28,11 @@ public class LoginStep {
     @Before
     public void before(){
         options = new ChromeOptions();
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
+        //options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         cadastroPage = new CadastroPage(driver);
     }
@@ -60,12 +61,13 @@ public class LoginStep {
     }*/
 
     @E("possua um cadastro com os dados")
-    public void possuoCadastroDataTable(List<Map<String, String>> dataTable){
+    public void possuoCadastroDataTable(List<Map<String, String>> dataTable) throws InterruptedException {
         String email = dataTable.get(0).get("Email");
         String nome = dataTable.get(0).get("Nome");
         String senha = dataTable.get(0).get("Senha");
         String confirmacao = dataTable.get(0).get("Confirmacao");
 
+        Thread.sleep(1000);
         cadastroPage.clicarBotaoRegistrar();
         cadastroPage.preencherEmail(email);
         cadastroPage.preencherNome(nome);
