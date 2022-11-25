@@ -91,8 +91,7 @@ public class LoginStep {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(2000);
+    public void after() {
         driver.close();
     }
 
