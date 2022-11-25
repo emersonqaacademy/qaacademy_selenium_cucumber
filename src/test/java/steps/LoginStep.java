@@ -37,12 +37,6 @@ public class LoginStep {
         cadastroPage = new CadastroPage(driver);
     }
 
-    @After
-    public void after() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.close();
-    }
-
     @Dado("que eu esteja na pagina inicial:{string}")
     public void queEstejaNaPaginaInicial(String url){
         driver.get(url);
@@ -96,6 +90,11 @@ public class LoginStep {
         Assert.assertTrue(driver.getCurrentUrl().contains("/home"));
     }
 
+    @After
+    public void after() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.close();
+    }
 
 
 }
