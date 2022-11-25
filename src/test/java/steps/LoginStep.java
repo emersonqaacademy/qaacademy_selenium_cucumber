@@ -90,10 +90,4 @@ public class LoginStep {
         Assert.assertTrue(driver.getCurrentUrl().contains("/home"));
     }
 
-    @After
-    public void after() {
-        driver.close();
-    }
-
-
 }
