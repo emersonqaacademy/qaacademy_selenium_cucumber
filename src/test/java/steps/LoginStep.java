@@ -30,12 +30,11 @@ public class LoginStep {
         options = new ChromeOptions();
         //options.addArguments("--headless");
         //options.addArguments("start-maximized");
-        loginPage = new LoginPage(driver);
-        cadastroPage = new CadastroPage(driver);
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-
+        loginPage = new LoginPage(driver);
+        cadastroPage = new CadastroPage(driver);
     }
 
     @After
