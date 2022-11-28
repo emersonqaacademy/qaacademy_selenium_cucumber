@@ -28,8 +28,8 @@ public class LoginStep {
     @Before
     public void before(){
         options = new ChromeOptions();
-        //options.addArguments("--headless");
-        //options.addArguments("start-maximized");
+        options.addArguments("--window-size=1810,1000");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
@@ -89,5 +89,11 @@ public class LoginStep {
         new WebDriverWait(driver, 5000).until(ExpectedConditions.urlToBe(url));
         Assert.assertTrue(driver.getCurrentUrl().contains("/home"));
     }
+
+    @After
+    public void after() {
+        driver.close();
+    }
+
 
 }
