@@ -92,7 +92,7 @@ public class LoginStep {
 
     @After
     public void after() {
-        driver.close();
+        driver.quit();
     }
 
 
