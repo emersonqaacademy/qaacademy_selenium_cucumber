@@ -14,7 +14,7 @@ public class CadastroPage {
     String NOME = "//body/div[@id='__next']//form[1]/div[3]/input[1]";
     String SENHA = "//body/div[@id='__next']//form[1]/div[4]//input[1]";
     String CONFIRMASENHA = "//body/div[@id='__next']//form[1]/div[5]//input[1]";
-    String CRIARSALDO = "//label[@id='toggleAddBalance']";
+    String CRIARSALDO = "//div[@id='__next']//div[6]/label[1]/span[1]";
     String BOTAOCADASTRAR = "//button[contains(text(),'Cadastrar')]";
     String BOTAOFECHARCADASTROSUCESSO = "//a[@id='btnCloseModal']";
 
