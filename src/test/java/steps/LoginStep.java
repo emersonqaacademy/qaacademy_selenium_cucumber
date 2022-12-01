@@ -27,6 +27,7 @@ public class LoginStep {
 
     @Before
     public void before(){
+        System.setProperty("webdriver.chrome.driver", "/opt/homebrew/Caskroom/chromedriver/107.0.5304.62/chromedriver");
         options = new ChromeOptions();
         options.addArguments("--window-size=1810,1000");
         options.addArguments("--headless");
