@@ -68,6 +68,7 @@ public class LoginStep {
         cadastroPage.preencherNome(nome);
         cadastroPage.preencherSenha(senha);
         cadastroPage.preencherConfirmacaoSenha(confirmacao);
+        Thread.sleep(1000);
         cadastroPage.selecionaSaldo();
         cadastroPage.clicaBotaoCadastrar();
         cadastroPage.clicaBotaoFecharContaCriada();
