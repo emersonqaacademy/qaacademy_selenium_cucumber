@@ -36,7 +36,7 @@ pipeline {
                                 // Download do projeto de teste unitario
                                 sh 'echo Baixando testes e2e'
                                 git 'https://github.com/emersonqaacademy/qaacademy_selenium_cucumber.git'
-                                sh 'mvn clean install -Dtest=Runner test'
+                                sh 'mvn -Dtest=Runner test'
 
                             }
         }
