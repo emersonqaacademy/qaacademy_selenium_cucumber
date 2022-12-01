@@ -2,7 +2,7 @@ pipeline {
     agent any
    //
     stages {
-        stage('Testes Unitarios') {
+/*         stage('Testes Unitarios') {
             steps {
                 // Download do projeto de teste unitario
                 sh 'echo Inicio dos testes unitarios Baixando projeto qaacademy_selenium_cucumber.git'
@@ -16,12 +16,12 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                    junit '**//* target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target *//*.jar'
                 }
 
             }
-        }
+        } */
         stage('Build Bugbank') {
                     steps {
                         // Download do projeto de teste unitario
