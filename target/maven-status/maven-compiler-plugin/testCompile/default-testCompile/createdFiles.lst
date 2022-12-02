@@ -1,0 +1,4 @@
+steps/Runner.class
+pages/CadastroPage.class
+steps/LoginStep.class
+pages/LoginPage.class
