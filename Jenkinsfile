@@ -13,17 +13,10 @@ pipeline {
                 // Executar os testes unitarios usando Maven
                 sh "mvn clean install test"
 
-            }
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**//* target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target *//*.jar'
                 }
-
             }
         }
+
         stage('Build Bugbank') {
                     steps {
                         // Download do projeto de teste unitario
@@ -33,6 +26,7 @@ pipeline {
 
                     }
         }
+
         stage('Test E2E') {
                             steps {
                                 // Download do projeto de teste unitario
@@ -42,6 +36,14 @@ pipeline {
 
                             }
         }
+
+        post {
+                        // If Maven was able to run the tests, even if some of the test
+                        // failed, record the test results and archive the jar file.
+                        success {
+                            junit '**//* target/surefire-reports/TEST-*.xml'
+                            archiveArtifacts 'target *//*.jar'
+                        }
 
     }
 }
