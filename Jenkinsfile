@@ -1,8 +1,10 @@
 pipeline {
     agent any
-   //
+    environment {
+        PATH = "/opt/homebrew/Cellar/maven/3.8.6/bin:$PATH"
+    }
     stages {
-/*         stage('Testes Unitarios') {
+         stage('Testes Unitarios') {
             steps {
                 // Download do projeto de teste unitario
                 sh 'echo Inicio dos testes unitarios Baixando projeto qaacademy_selenium_cucumber.git'
@@ -21,7 +23,7 @@ pipeline {
                 }
 
             }
-        } */
+        }
         stage('Build Bugbank') {
                     steps {
                         // Download do projeto de teste unitario
