@@ -21,8 +21,7 @@ pipeline {
                         // Download do projeto de teste unitario
                         sh 'echo Baixando Bugbank'
                         git 'https://github.com/qaacademy/bugbank.git'
-                        sh 'yarn'
-                        sh 'yarn dev'
+                        sh yarn dev
                         sh 'echo Bugbank está em execução'
 
                     }
