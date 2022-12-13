@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Build Bugbank') {
                     steps {
-                        // Download do projeto de teste unitario
+                        // Download do projeto do bugbank
                         sh 'echo Baixando Bugbank'
                         git 'https://github.com/qaacademy/bugbank.git'
                         sh 'echo Bugbank está em execução'
